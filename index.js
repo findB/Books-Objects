@@ -90,103 +90,24 @@ let books = [
   ];
 
 function myF() {
-    
+
     let li = document.getElementsByTagName("li");
     let j = 0;
-    
-//    let list = document.querySelector("#book");
-//    list.innerHTML = "";
-    
+
     // paimame pasirinkima
     let item = document.querySelector("#books");
     let itemValue = item.options[item.selectedIndex].value - 1;
 
-    // paimam vieta su kuria dirbam
-    
-    // listItem sarasas
-    
+    // i sarasa sukisam json turini
     let propValue;
     for (var propName in books[itemValue]) {
         propValue = books[itemValue][propName];
-        li[j].innerHTML = propValue;
-        j++;
-        
-
-//        let bookItem = document.createElement("li");
-//        bookItem.innerHTML = propValue;
-//        list.appendChild(bookItem);
-        
-        //console.log(propName, propValue);
+        if (j == 8) {
+            li[j].innerHTML = "<a href=" + propValue + ">" + propValue + "</a>";
+        } else {
+            li[j].innerHTML = propValue;
+            j++;
+        }
     }
-    //j = 0;
 
-
-
-
-
-
-    // If you need to iterate once over all these nodes, you can use the callback function:
-    //    console.log('Iterate with Array.from callback argument:');
-    //    
-    //    Array.from(document.querySelectorAll('#book>ul>li'), 
-    //               li => {
-    //                        li.textContent = books[1].isbn;
-    //                });
-
-
-
-
-
-    //  let test1 = books.map(obj => {
-    //    obj.isbn = "Labas";
-    //    let rObj = {};
-    //    rObj[obj.key] = obj.value;
-    //    return rObj;
-    //  });
-    //
-    //console.log(test1);
-    //  // console.log(Object.keys(books));
-
-    // let isbn = document.getElementById("isbn");
-    // isbn.innerHTML = books[itemValue].isbn;
-
-
-
-
-
-    ///books[itemValue].isbn;
-
-    // books[itemValue].isbn;
-
-    // // sukuriam li elementa
-    // let bookItem = document.createElement("li");
-
-    // // prie ul prilipdom li su turiniu: knygos isbn
-    // bookItem.innerHTML = books[itemValue].isbn;
-    //
-    // list.appendChild(bookItem);
-
-    //for (var ob in books) {
-    // sukuriam li elementa
-    // let bookItem = document.createElement("li");
-    // console.log(books[itemValue]);
-    //string1 = string1 + object1[property1];
-    // bookItem.innerHTML = books[itemValue].ob;
-    // list.appendChild(bookItem);
-    //}
-
-
-    //console.log(itemValue);
 }
-
-
-
-
-
-
-
-
-
-// var e = document.getElementById("elementId");
-// var value = e.options[e.selectedIndex].value;
-// var text = e.options[e.selectedIndex].text;

@@ -91,8 +91,11 @@ let books = [
 
 function myF() {
     
-    let list = document.querySelector("#book");
-    list.innerHTML = "";
+    let li = document.getElementsByTagName("li");
+    let j = 0;
+    
+//    let list = document.querySelector("#book");
+//    list.innerHTML = "";
     
     // paimame pasirinkima
     let item = document.querySelector("#books");
@@ -100,17 +103,22 @@ function myF() {
 
     // paimam vieta su kuria dirbam
     
-
-    var propValue;
+    // listItem sarasas
+    
+    let propValue;
     for (var propName in books[itemValue]) {
-        propValue = books[itemValue][propName]
+        propValue = books[itemValue][propName];
+        li[j].innerHTML = propValue;
+        j++;
+        
 
-        let bookItem = document.createElement("li");
-        bookItem.innerHTML = propValue;
-        list.appendChild(bookItem);
+//        let bookItem = document.createElement("li");
+//        bookItem.innerHTML = propValue;
+//        list.appendChild(bookItem);
         
         //console.log(propName, propValue);
     }
+    //j = 0;
 
 
 
